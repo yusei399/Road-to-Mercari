@@ -12,7 +12,7 @@ import (
 //画像の形式変換を行うための型
 type Converter struct{}
 
-// NewConverter は新しいConverterのインスタンスを生成
+// インスタンスを生成
 func NewConverter() *Converter {
 	return &Converter{}
 }
