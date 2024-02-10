@@ -1,4 +1,4 @@
-// Package converter はJPGファイルをPNGファイルに変換する機能を提供します。
+//JPGファイルをPNGファイルに変換する機能
 package converter
 
 import (
@@ -9,16 +9,15 @@ import (
 	"path/filepath"
 )
 
-// Converter は画像の形式変換を行うための型です。
+//画像の形式変換を行うための型
 type Converter struct{}
 
-// NewConverter は新しいConverterのインスタンスを生成して返します。
+// NewConverter は新しいConverterのインスタンスを生成
 func NewConverter() *Converter {
 	return &Converter{}
 }
 
-// ConvertJPGToPNG は指定されたディレクトリ内の全てのJPGファイルをPNGに変換します。
-// 変換に失敗したファイルがあった場合にはエラーを返します。
+// ConvertJPGToPNG は指定されたディレクトリ内の全てのJPGファイルをPNGに変換
 func (c *Converter) ConvertJPGToPNG(dir string) error {
 	return filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -31,8 +30,7 @@ func (c *Converter) ConvertJPGToPNG(dir string) error {
 	})
 }
 
-// convertToPNG は指定されたJPGファイルをPNGファイルに変換します。
-// この関数は、ConvertJPGToPNGからのみ呼び出されます。
+// JPGファイルをPNGファイルに変換
 func convertToPNG(filePath string) error {
 	file, err := os.Open(filePath)
 	if err != nil {
